@@ -1,15 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Manrope, Playfair_Display } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 import './globals.css'
-
-// Display serif for luxury headings + clean sans for body
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  variable: '--font-display',
-  display: 'swap',
-})
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -19,9 +11,9 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'Girum Marketing & Promotion — Growing Brands Digitally',
+  title: 'Girum — We turn attention into growth.',
   description:
-    'Girum Marketing & Promotion is a premium digital marketing agency blending creativity with strategy to build brands that matter and deliver measurable growth.',
+    'Girum Marketing & Promotion is a creative digital agency building brands that matter through strategy, creative and digital experiences.',
   generator: 'v0.app',
   keywords: [
     'digital marketing',
@@ -60,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark ${playfair.variable} ${manrope.variable} bg-background`}>
+    <html lang="en" className={`dark ${manrope.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
